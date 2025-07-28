@@ -90,6 +90,11 @@ int main() {
     printf("PIB per Capita: Carta 2 Venceu: %d\n", PIB_per_Capita1 > PIB_per_Capita2);
     printf("Densidade Inversa: Carta 1 Venceu: %d\n", Densidade_Inversa1 > Densidade_Inversa2);
     printf("Super Poder: Carta 2 Venceu: %d\n", Super_Poder1 > Super_Poder2);
+    if (Populacao1 > Populacao2){
+    printf("A carte A01 venceu! \n");
+} else {
+    printf("A carte A02 venceu! \n");
+    }
 
     return 0;
 }
