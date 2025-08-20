@@ -1,6 +1,5 @@
-#include <stdio.h>
-
-int main() {
+int main()
+{
     char Estado1 = 'A';
     char Codigo1[4] = "A01";
     char Cidade1[50], cidade1[50] = "Belo Horizonte";
@@ -12,7 +11,7 @@ int main() {
     float PIB_per_Capita1 = (float)(PIB1 * 1e9) / (float)Populacao1;
     double Densidade_Inversa1 = (float)Area1 / (float)Populacao1;
     float Super_Poder1 = (float)Populacao1 + (float)Area1 + (float)(PIB1 * 1e9) + (float)Pontos_Turisticos1 + PIB_per_Capita1 + Densidade_Inversa1;
-
+    int Menu_Interativo;
 
     printf("Digite o estado: ");
     scanf("%c", &Estado1);
@@ -40,7 +39,6 @@ int main() {
     printf("Densidade Inversa: %.9lf\n", Densidade_Inversa1);
     printf("Super Poder: %.2f\n", Super_Poder1);
     printf("\n");
-    
 
     char Estado2 = 'B';
     char Codigo2[4] = "B02";
@@ -90,10 +88,78 @@ int main() {
     printf("PIB per Capita: Carta 2 Venceu: %d\n", PIB_per_Capita1 > PIB_per_Capita2);
     printf("Densidade Inversa: Carta 1 Venceu: %d\n", Densidade_Inversa1 > Densidade_Inversa2);
     printf("Super Poder: Carta 2 Venceu: %d\n", Super_Poder1 > Super_Poder2);
-    if (Populacao1 > Populacao2){
-    printf("A carte A01 venceu! \n");
-} else {
-    printf("A carte A02 venceu! \n");
+    if (Populacao1 > Populacao2)
+    {
+        printf("A carte A01 venceu! \n");
+    }
+    else
+    {
+        printf("A carte A02 venceu! \n");
+    }
+    printf("\n");
+
+    printf("** Menu Interativo: **\n");
+    printf("1. População: Belo Horizonte: 2315560, São Paulo: 11451999;\n");
+    printf("2. Área: Belo Horizonte: 331.354, São Paulo: 1.521; \n");
+    printf("3. PIB: Belo Horizonte: 105.05, São Paulo: 3500000000000;\n");
+    printf("4. Número de Pontos Turísticos: Belo Horizonte: 100 , São Paulo: 200; \n");
+    printf("5. Densidade Demográfica: Belo Horizonte: 6988.18 , São Paulo: 7529256.50\n");
+    printf("Escolha uma opção:\n");
+    scanf("%d", &Menu_Interativo);
+
+    switch (Menu_Interativo){
+        case 1: 
+            if(Populacao1 > Populacao2){
+                printf("Carta 1 venceu!\n");
+            } else if(Populacao2 > Populacao1){
+                printf("Carta 2 venceu!\n");
+            } else{
+                printf("Empate.\n");
+            }
+        break;
+
+        case 2: 
+            if(Area1 > Area2){
+                printf("Carta 1 venceu!\n");
+            } else if(Area2 > Area1){
+                printf("Carta 2 venceu!\n");
+            } else{
+                printf("Empate.\n");
+            }
+        break;   
+
+        case 3: 
+            if(PIB1 > PIB2){
+                printf("Carta 1 venceu!\n");
+            } else if(PIB2 > PIB1){
+                printf("Carta 2 venceu!\n"); 
+            } else{
+                printf("Empate.\n");
+            }
+        break;
+
+        case 4: 
+            if(Pontos_Turisticos1 > Pontos_Turisticos2){
+                printf("Carta 1 venceu!\n");
+            } else if(Pontos_Turisticos2 > Pontos_Turisticos1){
+                printf("Carta 2 venceu!\n");
+            } else{
+                printf("Empate.\n");
+            }
+        break;   
+
+        case 5: 
+            if(Densidade_Populacional1 > Densidade_Populacional2){
+                printf("Carta 1 venceu!\n");
+            } else if(Densidade_Populacional2 > Densidade_Populacional1){
+                printf("Carta 2 venceu!\n");
+            } else{
+                printf("Empate.\n");
+            }
+        break;
+
+        default:
+            printf("Opção Inválida.\n");
     }
 
     return 0;
