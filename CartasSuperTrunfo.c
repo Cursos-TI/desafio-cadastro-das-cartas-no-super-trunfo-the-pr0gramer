@@ -12,6 +12,9 @@ int main()
     double Densidade_Inversa1 = (float)Area1 / (float)Populacao1;
     float Super_Poder1 = (float)Populacao1 + (float)Area1 + (float)(PIB1 * 1e9) + (float)Pontos_Turisticos1 + PIB_per_Capita1 + Densidade_Inversa1;
     int Menu_Interativo;
+    int Resultado1, Resultado2;
+    char Atributo1, Atributo2;
+
 
     printf("Digite o estado: ");
     scanf("%c", &Estado1);
@@ -161,6 +164,15 @@ int main()
         default:
             printf("Opção Inválida.\n");
     }
+
+    printf("** Bem-vindo ao Jogo de Atributos! **\n");
+    printf("Escolha o primeiro atributo:\n");
+    printf("2. Área: Belo Horizonte: 331.354, São Paulo: 1.521; \n");
+    printf("3. PIB: Belo Horizonte: 105.05, São Paulo: 3500000000000;\n");
+    printf("4. Número de Pontos Turísticos: Belo Horizonte: 100 , São Paulo: 200; \n");
+    printf("5. Densidade Demográfica: Belo Horizonte: 6988.18 , São Paulo: 7529256.50\n");
+    printf("Escolha uma opção:\n");
+    scanf("%d", &Menu_Interativo);
 
     return 0;
 }
