@@ -167,12 +167,46 @@ int main()
 
     printf("** Bem-vindo ao Jogo de Atributos! **\n");
     printf("Escolha o primeiro atributo:\n");
-    printf("2. Área: Belo Horizonte: 331.354, São Paulo: 1.521; \n");
-    printf("3. PIB: Belo Horizonte: 105.05, São Paulo: 3500000000000;\n");
-    printf("4. Número de Pontos Turísticos: Belo Horizonte: 100 , São Paulo: 200; \n");
-    printf("5. Densidade Demográfica: Belo Horizonte: 6988.18 , São Paulo: 7529256.50\n");
-    printf("Escolha uma opção:\n");
-    scanf("%d", &Menu_Interativo);
+    printf("P. População;\n");
+    printf("A. Área;\n");
+    printf("PI. PIB;\n");
+    printf("PT. Pontos Turísticos;\n");
+    
+    printf("Escolha a comparação:\n");
+    scanf("%c", &Atributo1);
+
+    switch (Atributo1)
+    {
+    case 'P':
+    printf("Você escolheu a comparação População!\n");
+    Resultado1 = Populacao1 > Populacao2 ? 1 : 0;
+    break;
+    case 'A':
+    printf("Você escolheu a comparação Área!\n");
+    Resultado1 = Area1 > Area2 ? 1 : 0;
+    break;
+    case 'PI':
+    printf("Você escolheu a comparação PIB!\n");
+    Resultado1 = PIB1 > PIB2 ? 1 : 0;
+    break;
+    case 'PT':
+    printf("Você escolheu a comparação Pontos Turísticos!\n");
+    Resultado1 = Pontos_Turisticos1 > Pontos_Turisticos2 ? 1 : 0;
+    break;
+    default:
+    printf("Opção inválida! Tente novamente.\n");
+    break;
+    }
+
+    printf("Escolha o segundo atributo:\n");
+    printf("P. População;\n");
+    printf("A. Área;\n");
+    printf("PI. PIB;\n");
+    printf("PT. Pontos Turísticos;\n");
+    
+    printf("Escolha a comparação:\n");
+    scanf("%c", &Atributo1);
+
 
     return 0;
 }
