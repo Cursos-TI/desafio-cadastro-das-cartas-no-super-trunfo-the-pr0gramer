@@ -164,49 +164,84 @@ int main()
         default:
             printf("Opção Inválida.\n");
     }
+    printf("\n");
 
-    printf("** Bem-vindo ao Jogo de Atributos! **\n");
-    printf("Escolha o primeiro atributo:\n");
-    printf("P. População;\n");
-    printf("A. Área;\n");
-    printf("PI. PIB;\n");
-    printf("PT. Pontos Turísticos;\n");
-    
-    printf("Escolha a comparação:\n");
-    scanf("%c", &Atributo1);
+printf("** Bem-vindo ao Jogo de Atributos! **\n");
+printf("Escolha o primeiro atributo:\n");
+printf("P. População;\n");
+printf("A. Área;\n");
+printf("I. PIB;\n");
+printf("T. Pontos Turísticos;\n");
 
-    switch (Atributo1)
-    {
+printf("Escolha a comparação:\n");
+scanf(" %c", &Atributo1); 
+
+switch (Atributo1)
+{
     case 'P':
-    printf("Você escolheu a comparação População!\n");
-    Resultado1 = Populacao1 > Populacao2 ? 1 : 0;
-    break;
+        printf("Você escolheu a comparação População!\n");
+        Resultado1 = Populacao1 > Populacao2 ? 1 : 0;
+        break;
     case 'A':
-    printf("Você escolheu a comparação Área!\n");
-    Resultado1 = Area1 > Area2 ? 1 : 0;
-    break;
-    case 'PI':
-    printf("Você escolheu a comparação PIB!\n");
-    Resultado1 = PIB1 > PIB2 ? 1 : 0;
-    break;
-    case 'PT':
-    printf("Você escolheu a comparação Pontos Turísticos!\n");
-    Resultado1 = Pontos_Turisticos1 > Pontos_Turisticos2 ? 1 : 0;
-    break;
+        printf("Você escolheu a comparação Área!\n");
+        Resultado1 = Area1 > Area2 ? 1 : 0;
+        break;
+    case 'I':
+        printf("Você escolheu a comparação PIB!\n");
+        Resultado1 = PIB1 > PIB2 ? 1 : 0;
+        break;
+    case 'T':
+        printf("Você escolheu a comparação Pontos Turísticos!\n");
+        Resultado1 = Pontos_Turisticos1 > Pontos_Turisticos2 ? 1 : 0;
+        break;
     default:
-    printf("Opção inválida! Tente novamente.\n");
-    break;
+        printf("Opção inválida! Tente novamente.\n");
+        break;
+}
+
+printf("Escolha o segundo atributo:\n");
+printf("P. População;\n");
+printf("A. Área;\n");
+printf("I. PIB;\n");
+printf("T. Pontos Turísticos;\n");
+
+printf("Escolha a comparação:\n");
+scanf(" %c", &Atributo2); 
+
+if (Atributo1 == Atributo2) {
+    printf("Você escolheu o mesmo atributo!\n");
+} else {
+    switch (Atributo2)
+    {
+        case 'P':
+            printf("Você escolheu a comparação População!\n");
+            Resultado2 = Populacao1 > Populacao2 ? 1 : 0;
+            break;
+        case 'A':
+            printf("Você escolheu a comparação Área!\n");
+            Resultado2 = Area1 > Area2 ? 1 : 0;
+            break;
+        case 'I':
+            printf("Você escolheu a comparação PIB!\n");
+            Resultado2 = PIB1 > PIB2 ? 1 : 0;
+            break;
+        case 'T':
+            printf("Você escolheu a comparação Pontos Turísticos!\n");
+            Resultado2 = Pontos_Turisticos1 > Pontos_Turisticos2 ? 1 : 0;
+            break;
+        default:
+            printf("Opção inválida! Tente novamente.\n");
+            break;
     }
+}
 
-    printf("Escolha o segundo atributo:\n");
-    printf("P. População;\n");
-    printf("A. Área;\n");
-    printf("PI. PIB;\n");
-    printf("PT. Pontos Turísticos;\n");
-    
-    printf("Escolha a comparação:\n");
-    scanf("%c", &Atributo1);
-
+if (Resultado1 == 1 && Resultado2 == 1) {
+    printf("Você venceu!\n");
+} else if (Resultado1 != Resultado2) {
+    printf("Deu empate!\n");
+} else {
+    printf("Infelizmente você perdeu.\n");
+}
 
     return 0;
 }
